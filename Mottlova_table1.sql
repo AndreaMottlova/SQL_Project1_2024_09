@@ -17,4 +17,22 @@ LEFT JOIN czechia_payroll_industry_branch AS cpib
 LEFT JOIN czechia_payroll_unit AS cpu 
 	ON cp.unit_code =cpu.code 
 LEFT JOIN czechia_payroll_value_type AS cpvt 
-	ON cp.value_type_code =cpvt.code 
+	ON cp.value_type_code =cpvt.code; 
+
+	
+	
+SELECT 
+	  cp.category_code
+	 ,cpc.name AS category_name
+	 ,cp.value AS category_value
+	 ,cpc.price_value 
+	 ,cpc.price_unit 
+	 ,cp.region_code 
+	 ,cr.name AS region_name
+	 ,YEAR(cp.date_from) AS price_year
+FROM czechia_price AS cp 
+LEFT JOIN czechia_price_category AS cpc 
+	ON cp.category_code =cpc.code 
+LEFT JOIN czechia_region AS cr
+	ON cp.region_code =cr.code 
+	
