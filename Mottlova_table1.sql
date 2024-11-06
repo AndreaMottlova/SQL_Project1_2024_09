@@ -34,5 +34,18 @@ FROM czechia_price AS cp
 LEFT JOIN czechia_price_category AS cpc 
 	ON cp.category_code =cpc.code 
 LEFT JOIN czechia_region AS cr
-	ON cp.region_code =cr.code 
+	ON cp.region_code =cr.code ;
+	
+	
+
+SELECT 
+	  e.country
+	 ,e.`year` 
+	 ,e.GDP 
+	 ,e.gini 
+	 ,e.population 
+FROM economies AS e 
+LEFT JOIN countries AS c 
+	ON e.country=c.country 
+WHERE e.country ='Czech Republic' AND c.country ='Czech Republic'
 	
