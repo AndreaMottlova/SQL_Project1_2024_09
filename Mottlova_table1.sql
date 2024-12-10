@@ -1,10 +1,27 @@
 SELECT A.*, B.*, e.GDP FROM (
 	SELECT 
+		  cp.category_code
+		 ,cpc.name AS category_name
+		 ,cp.value AS category_value
+		 ,cpc.price_value 
+		 ,cpc.price_unit 
+	--	 ,cp.region_code 
+		-- ,cr.name AS region_name
+		 ,YEAR(cp.date_from) AS price_year
+	FROM czechia_price AS cp 
+	LEFT JOIN czechia_price_category AS cpc 
+		ON cp.category_code =cpc.code 
+	-- LEFT JOIN czechia_region AS cr
+	--	ON cp.region_code =cr.code
+	WHERE cp.region_code IS NULL 
+	) AS A	
+LEFT JOIN (	
+	SELECT 
 		 industry_branch_code 
 		,cpib.name AS industry_branch_name
 		,cp.value_type_code
 		,cpvt.name AS value_name
-		,cp.value AS value_payroll
+		,avg(cp.value) AS value_payroll
 		,cp.unit_code 
 		,cpu.name AS unit_name
 		,cp.calculation_code 
@@ -18,24 +35,11 @@ SELECT A.*, B.*, e.GDP FROM (
 	LEFT JOIN czechia_payroll_unit AS cpu 
 		ON cp.unit_code =cpu.code 
 	LEFT JOIN czechia_payroll_value_type AS cpvt 
-		ON cp.value_type_code =cpvt.code) AS A 
-LEFT JOIN (	
-	SELECT 
-		  cp.category_code
-		 ,cpc.name AS category_name
-		 ,cp.value AS category_value
-		 ,cpc.price_value 
-		 ,cpc.price_unit 
-		 ,cp.region_code 
-		 ,cr.name AS region_name
-		 ,YEAR(cp.date_from) AS price_year
-	FROM czechia_price AS cp 
-	LEFT JOIN czechia_price_category AS cpc 
-		ON cp.category_code =cpc.code 
-	 LEFT JOIN czechia_region AS cr
-		ON cp.region_code =cr.code) AS B
-ON A.payroll_year=B.price_year
+		ON cp.value_type_code =cpvt.code
+		WHERE cp.value IS NOT NULL AND cp.calculation_code=200 AND cp.industry_branch_code IS NOT null
+		GROUP BY industry_branch_code ,cpib.name,cp.value_type_code,cpvt.name,cp.unit_code ,cpu.name,cpc.name,cp.payroll_year ) AS B 
+ON B.payroll_year=A.price_year
 LEFT JOIN economies AS e 
-	ON A.payroll_year=e.`year` 
+	ON B.payroll_year=e.`year` 
 WHERE e.country = 'Czech Republic';
 
