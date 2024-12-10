@@ -1,18 +1,27 @@
-SELECT A.*, B.*, e.GDP FROM (
+CREATE OR REPLACE TABLE t_andrea_mottlova_project_SQL_primary_final AS 
+SELECT 
+	A.price_year AS 'year'
+	, A.category_name
+	, A.category_value AS value
+	, A.price_value AS 'size'
+	, A.price_unit AS unit
+	, B.industry_branch_name
+	, B.value_type_code
+	, B.value_name
+	, B.value_payroll AS wage
+	, B.unit_name AS wage_unit
+	, e.GDP 
+FROM (
 	SELECT 
 		  cp.category_code
 		 ,cpc.name AS category_name
 		 ,cp.value AS category_value
 		 ,cpc.price_value 
 		 ,cpc.price_unit 
-	--	 ,cp.region_code 
-		-- ,cr.name AS region_name
 		 ,YEAR(cp.date_from) AS price_year
 	FROM czechia_price AS cp 
 	LEFT JOIN czechia_price_category AS cpc 
 		ON cp.category_code =cpc.code 
-	-- LEFT JOIN czechia_region AS cr
-	--	ON cp.region_code =cr.code
 	WHERE cp.region_code IS NULL 
 	) AS A	
 LEFT JOIN (	
@@ -36,10 +45,17 @@ LEFT JOIN (
 		ON cp.unit_code =cpu.code 
 	LEFT JOIN czechia_payroll_value_type AS cpvt 
 		ON cp.value_type_code =cpvt.code
-		WHERE cp.value IS NOT NULL AND cp.calculation_code=200 AND cp.industry_branch_code IS NOT null
-		GROUP BY industry_branch_code ,cpib.name,cp.value_type_code,cpvt.name,cp.unit_code ,cpu.name,cpc.name,cp.payroll_year ) AS B 
+		WHERE cp.value IS NOT NULL AND 
+		cp.calculation_code=200 AND -- přepočtený
+		cp.industry_branch_code IS NOT null
+		GROUP BY industry_branch_code ,cpib.name,cp.value_type_code,cpvt.name,cp.unit_code ,cpu.name,cpc.name,cp.payroll_year 
+		) AS B 
 ON B.payroll_year=A.price_year
 LEFT JOIN economies AS e 
-	ON B.payroll_year=e.`year` 
+ON B.payroll_year=e.`year` 
 WHERE e.country = 'Czech Republic';
+
+
+SELECT * 
+FROM t_andrea_mottlova_project_sql_primary_final AS tampspf 
 
