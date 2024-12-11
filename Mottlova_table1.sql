@@ -1,16 +1,16 @@
 CREATE OR REPLACE TABLE t_andrea_mottlova_project_SQL_primary_final AS 
 SELECT 
-	A.price_year AS 'year'
-	, A.category_name
-	, A.category_value AS value
-	, A.price_value AS 'size'
-	, A.price_unit AS unit
-	, B.industry_branch_name
-	, B.value_type_code
-	, B.value_name
-	, B.value_payroll AS wage
-	, B.unit_name AS wage_unit
-	, e.GDP 
+	A.price_year AS rok
+	, A.category_name AS cena_kategorie
+	, A.category_value AS cena_cena
+	, A.price_value AS cena_velikost
+	, A.price_unit AS cena_jednotka
+	, B.industry_branch_name AS zamest_odvetvi
+	, B.value_type_code AS zamest_kod_typ
+	, B.value_name AS zamest_kod_nazev
+	, B.value_payroll AS zamest_hodnota
+	, B.unit_name AS zamest_jednotka
+	, e.GDP AS HDP
 FROM (
 	SELECT 
 		  cp.category_code
