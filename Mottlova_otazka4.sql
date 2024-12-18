@@ -15,6 +15,11 @@ SELECT rok
 	   , round(lag(avg(prumerna_mzda)) OVER (ORDER BY rok),2) AS prum_mzda_predch_rok
 	   , round(avg(prumerna_mzda)/lag(avg(prumerna_mzda)) OVER (ORDER BY rok)*100-100,2) AS prum_mzda_rozdil_procent
 	   , round((avg(cena)/lag(avg(cena)) OVER (ORDER BY rok)*100-100)-(avg(prumerna_mzda)/lag(avg(prumerna_mzda)) OVER (ORDER BY rok)*100-100),2) AS porovnani_ceny_vs_mzdy
+	   , CASE
+	   	WHEN (avg(cena)/lag(avg(cena)) OVER (ORDER BY rok)*100-100)-(avg(prumerna_mzda)/lag(avg(prumerna_mzda)) OVER (ORDER BY rok)*100-100) > 0 THEN 'růst'
+	   	WHEN (avg(cena)/lag(avg(cena)) OVER (ORDER BY rok)*100-100)-(avg(prumerna_mzda)/lag(avg(prumerna_mzda)) OVER (ORDER BY rok)*100-100) < 0 THEN 'pokles'
+	   	WHEN (avg(cena)/lag(avg(cena)) OVER (ORDER BY rok)*100-100)-(avg(prumerna_mzda)/lag(avg(prumerna_mzda)) OVER (ORDER BY rok)*100-100) = 0 THEN 'stagnace'
+	   END AS vyvoj_ceny_vs_mzdy
 FROM t_andrea_mottlova_project_sql_primary_final AS tampspf 
 GROUP BY rok 
 ORDER BY rok 
