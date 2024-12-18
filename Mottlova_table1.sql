@@ -1,15 +1,13 @@
 CREATE OR REPLACE TABLE t_andrea_mottlova_project_SQL_primary_final AS 
 SELECT 
 	A.price_year AS rok
-	, A.category_name AS cena_kategorie
-	, A.category_value AS cena_cena
-	, A.price_value AS cena_velikost
-	, A.price_unit AS cena_jednotka
-	, B.industry_branch_name AS zamest_odvetvi
-	, B.value_type_code AS zamest_kod_typ
-	, B.value_name AS zamest_kod_nazev
-	, B.value_payroll AS zamest_hodnota
-	, B.unit_name AS zamest_jednotka
+	, A.category_name AS kategorie_potraviny
+	, A.category_value AS cena
+	, A.price_value AS velikost
+	, A.price_unit AS jednotka
+	, B.industry_branch_name AS odvetvi
+	, B.value_payroll AS prumerna_mzda
+	, B.unit_name AS mena
 	, e.GDP AS HDP
 FROM (
 	SELECT 
@@ -22,7 +20,7 @@ FROM (
 	FROM czechia_price AS cp 
 	LEFT JOIN czechia_price_category AS cpc 
 		ON cp.category_code =cpc.code 
-	WHERE cp.region_code IS NULL 
+	WHERE cp.region_code IS NULL
 	) AS A	
 LEFT JOIN (	
 	SELECT 
@@ -47,7 +45,8 @@ LEFT JOIN (
 		ON cp.value_type_code =cpvt.code
 		WHERE cp.value IS NOT NULL AND 
 		cp.calculation_code=200 AND -- přepočtený
-		cp.industry_branch_code IS NOT null
+		cp.industry_branch_code IS NOT NULL AND 
+		cp.value_type_code=5958
 		GROUP BY industry_branch_code ,cpib.name,cp.value_type_code,cpvt.name,cp.unit_code ,cpu.name,cpc.name,cp.payroll_year 
 		) AS B 
 ON B.payroll_year=A.price_year
