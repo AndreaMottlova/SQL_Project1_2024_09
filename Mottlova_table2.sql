@@ -2,7 +2,7 @@
 CREATE OR REPLACE TABLE t_andrea_mottlova_project_SQL_secondary_final
 SELECT 	e.year AS rok 
 		,e.country AS stat
-		,round(e.gdp/1000000) AS hdp_v_mil
+		,round(gdp) AS hdp
 		,e.population AS populace
 		,e.gini AS gini
 FROM countries AS c 
