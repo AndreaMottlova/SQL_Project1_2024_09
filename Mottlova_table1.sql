@@ -46,7 +46,7 @@ LEFT JOIN (
 		WHERE cp.value IS NOT NULL AND 
 		cp.calculation_code=200 AND -- přepočtený
 		cp.industry_branch_code IS NOT NULL AND 
-		cp.value_type_code=5958
+		cp.value_type_code=5958 -- průměrná hrubá mzda
 		GROUP BY industry_branch_code ,cpib.name,cp.value_type_code,cpvt.name,cp.unit_code ,cpu.name,cpc.name,cp.payroll_year 
 		) AS B 
 ON B.payroll_year=A.price_year
