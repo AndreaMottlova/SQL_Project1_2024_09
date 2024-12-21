@@ -9,7 +9,7 @@ FROM t_andrea_mottlova_project_sql_primary_final AS tampspf
 
 SELECT rok 
 	   , kategorie_potraviny
-	   , concat(round(avg(cena),2),' / ',velikost,jednotka)  AS prumerna_cena
+	   , concat(round(avg(cena),2),' Kč/ ',velikost,jednotka)  AS prumerna_cena
 	   , concat(round(avg(prumerna_mzda)),' Kč') AS prumerna_mzda
 	   , concat(floor(avg(prumerna_mzda)/avg(cena)),' ',jednotka) AS pocet
 FROM t_andrea_mottlova_project_sql_primary_final AS tampspf 
