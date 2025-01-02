@@ -8,7 +8,6 @@ SELECT
 	, B.industry_branch_name AS odvetvi
 	, B.value_payroll AS prumerna_mzda
 	, B.unit_name AS mena
-	, e.GDP AS HDP
 FROM (
 	SELECT 
 		  cp.category_code
@@ -50,9 +49,6 @@ LEFT JOIN (
 		GROUP BY industry_branch_code ,cpib.name,cp.value_type_code,cpvt.name,cp.unit_code ,cpu.name,cpc.name,cp.payroll_year 
 		) AS B 
 ON B.payroll_year=A.price_year
-LEFT JOIN economies AS e 
-ON B.payroll_year=e.`year` 
-WHERE e.country = 'Czech Republic';
 
 
 SELECT * 
