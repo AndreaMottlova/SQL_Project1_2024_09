@@ -36,6 +36,3 @@ SELECT rok
 FROM t_andrea_mottlova_project_sql_primary_final AS tampspf 
 GROUP BY rok, HDP
 
-
-SELECT * 
-FROM t_andrea_mottlova_project_sql_primary_final AS tampspf 
