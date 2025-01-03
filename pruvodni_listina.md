@@ -10,6 +10,7 @@ Z tabulek je následně potřeba odpovědět na **5 zadaných výzkumných otáz
 ### **Výstup projektu**
 
 **Tabulka 1**
+
 Tabulka 1 obsahuje údaje o dostupnosti potravin na základě průměrných cen potravin a průměrných mezd za určité období. 
 Pro analýzu jsem použila tabulky czechia_payroll (tabulka o průměrných mzdách v různých odvětvích) a czechia_price (tabulka o cenách potravin v regionech ČR) a další k nim napojené tabulky a číselníky. 
 
@@ -22,15 +23,18 @@ Jelikož je vhodné tabulku velikostně optimalizovat, ponechala jsme pouze hodn
 Spojením tabulek s cenami a průměrnými mzdami vznikl průnik údajů za *období od roku 2006 do 2018*. 
 
 **Tabulka 2**
+
 Dodatečná data (HDP, GINI, populace) o evropských státech za období 2006 až 2018.
 
 **Otázka 1**
+
 ***Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?***
 
 Pokud vezmeme v úvahu celé sledované období (porovnání roku 2006 a 2018), mzdy ve všech odvětvích od roku 2006 do 2018 stoupaly, minimální celkový nárust byl o 37,1 % v odvětví Peněžnictví a pojišťovnictví, naopak největší nárust od roku 2006 do 2018 byl v odvětví Zdravotní a sociální péče a to o 77,8 %.
 V datech byl ale zaznamenán pokles mezd v některých rocích a odvětvích. **Největší pokles, o 8,8 % byl v roce 2013 v odvětví Peněžnictví a pojišťovnictví**, kdy průměrná mzda klesla z 50 801 Kč v roce 2012 na 46 317 Kč v roce 2013. 
 
 **Otázka 2**
+
 ***Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období v dostupných datech cen a mezd?***
 
 Ve sledovaném období byla průměrná mzda na začátku období, tedy v roku 2006, ve výši 21165 Kč, na konci období, tedy v roce 2018, vystoupala průměrná mzda na 33091 Kč. 
@@ -38,12 +42,14 @@ Mezi roky 2006 a 2018 došlo k nárustu průměrné mzdy, ale také ke zvýšen�
 Z toho vyplývá, že **za průměrnou mzdu je v roce 2018 možné koupit větší množství základních potravin**, což může odrážet růst reálné kupní síly. 
 
 **Otázka 3**
+
 ***Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší procentuální meziroční nárůst)?***
 
 Na základě dat lze identifikovat, že **potravinou s nejpomalejším meziročním nárustem cen je Cukr krystalový**, který vykazuje nejnižší průměrný meziroční nárust procent a to o 1,92%, což znamená, že jeho cena se dokonce snižovala. Celkový pokles ceny činí 23,02%. 
 Kromě cukru zlevňovali ještě Rajská jablka červená kulatá, a to průměrně meziročně o 0,74%, celkový pokles ceny byl o 8,89%. Tohle jsou dvě kategorie, která zdražovala nejpomaleji, respektive zlevňovala, což je v porovnání s ostatními kategoriemi potravin výjimečné. 
 
 **Otázka 4**
+
 ***Existuje rok, ve kterém byl meziroční nárůst cen potravin výrazně vyšší než růst mezd (větší než 10 %)?***
 
 Meziroční nárust cen potravin i meziroční nárust mezd jsem vyhodnotila procentuálním nárustem oproti předchozímu roku. Rozdílem mezi těmito vypočtenými hodnotami jsem porovnala vývoj cen vs mezd. Nejhorší situace nastává, když růst cen potravin je vysoký, ale růst mezd je nízký. 
@@ -51,6 +57,7 @@ Z dat vyplývá, že **ani v jednom ze sledovaných roků nebyl meziroční nár
 Nejhorší situace byla v roce 2013, kdy průměrné ceny potravin vzrostli o 5,55 % a průměrné mzdy klesly o 1,56 % což znamená, že růst potravin byl vyšší o 7,11 % oproti růstu mezd. 
 
 **Otázka 5**
+
 ***Má výška HDP vliv na změny ve mzdách a cenách potravin? Neboli, pokud HDP vzroste výrazněji v jednom roce, projeví se to na cenách potravin či mzdách ve stejném nebo následujícím roce výraznějším růstem?***
 
 Z dat je patrné, že nejvýraznější nárust HDP (nad 5%) byl v rocích 2007, 2015 a 2017. 
