@@ -4,7 +4,7 @@
 ### **Zadání projektu**
 
 Projekt se zaměřuje na dostupnost základních potravin široké veřejnosti, na základě srovnání cen potravin, průměrných mezd, případně i vlivu HDP. 
-Pro výstup z projektu je potřeba vytvořit **Tabulku 1** která obsahuje ceny potravin a průměrné mzdy v ČR a **Tabulku 2**, která obsahuje HDP a další data o dalších evropských státech. 
+Pro výstup z projektu je potřeba vytvořit **Tabulku 1**, která obsahuje ceny potravin a průměrné mzdy v ČR a **Tabulku 2**, která obsahuje HDP a další data o dalších evropských státech. 
 Z tabulek je následně potřeba odpovědět na **5 zadaných výzkumných otázek**. 
 
 ### **Výstup projektu**
@@ -38,7 +38,7 @@ V datech byl ale zaznamenán pokles mezd v některých rocích a odvětvích. **
 ***Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období v dostupných datech cen a mezd?***
 
 Ve sledovaném období byla průměrná mzda na začátku období, tedy v roku 2006, ve výši 21165 Kč, na konci období, tedy v roce 2018, vystoupala průměrná mzda na 33091 Kč. 
-Mezi roky 2006 a 2018 došlo k nárustu průměrné mzdy, ale také ke zvýšení cen potravin. V roce 2018 je možné za průměrnou mzdu koupit o něco víc chleba (1365 kg) než v roce 2006 (1312 kg). U mlíka byl rozdíl výraznější, kdy v roce 2006 bylo možné koupit z průměrné mzdy 1465 l, kdežto v roce 2018 až 1669 l mléka. 
+Mezi roky 2006 a 2018 došlo k nárustu průměrné mzdy, ale také ke zvýšení cen potravin. V roce 2018 je možné za průměrnou mzdu koupit o něco víc chleba (1365 kg) než v roce 2006 (1312 kg). U mléka byl rozdíl výraznější, kdy v roce 2006 bylo možné koupit z průměrné mzdy 1465 l, kdežto v roce 2018 až 1669 l mléka. 
 Z toho vyplývá, že **za průměrnou mzdu je v roce 2018 možné koupit větší množství základních potravin**, což může odrážet růst reálné kupní síly. 
 
 **Otázka 3**
@@ -54,7 +54,7 @@ Kromě cukru zlevňovali ještě Rajská jablka červená kulatá, a to průměr
 
 Meziroční nárust cen potravin i meziroční nárust mezd jsem vyhodnotila procentuálním nárustem oproti předchozímu roku. Rozdílem mezi těmito vypočtenými hodnotami jsem porovnala vývoj cen vs mezd. Nejhorší situace nastává, když růst cen potravin je vysoký, ale růst mezd je nízký. 
 Z dat vyplývá, že **ani v jednom ze sledovaných roků nebyl meziroční nárust cen potravin vyšší než 10 % oproti růstu mezd**. 
-Nejhorší situace byla v roce 2013, kdy průměrné ceny potravin vzrostli o 5,55 % a průměrné mzdy klesly o 1,56 % což znamená, že růst potravin byl vyšší o 7,11 % oproti růstu mezd. 
+Nejhorší situace byla v roce 2013, kdy průměrné ceny potravin vzrostli o 5,55 % a průměrné mzdy klesly o 1,56 % což znamená, že růst cen potravin byl vyšší o 7,11 % oproti růstu mezd. 
 
 **Otázka 5**
 
@@ -62,13 +62,13 @@ Nejhorší situace byla v roce 2013, kdy průměrné ceny potravin vzrostli o 5,
 
 Z dat je patrné, že nejvýraznější nárust HDP (nad 5%) byl v rocích 2007, 2015 a 2017. 
 -	2007: HDP vzrostlo o 5,57 %, ceny potravin o 6,35 %, mzdy o 6,88 % 
-Následující rok (2008) ceny potravin vzrostli o 6,41 % a mzdy o 7,69 % -> zdá se, že vyšší růst HDP může souviset s růstem cen i mezd ve stejném i následujícím roce
+Následující rok (2008) ceny potravin vzrostly o 6,41 % a mzdy o 7,69 % -> zdá se, že vyšší růst HDP může souviset s růstem cen i mezd ve stejném i následujícím roce
 
 -	2015: HDP vzrostlo o 5,39 %, ceny potravin klesly o 0,56 %, a mzdy vzrostly o 2,6 % 
 Následující rok (2016) ceny potravin klesly o 1,12 % a mzdy vzrostly o 3,64 % -> tady neplatí, že by vyšší růst HDP souvisel s růstem cen i mezd ve stejném i následujícím roce
 
 -	2017: HDP vzrostlo o 5,17 %, ceny potravin o 9,98 %, mzdy o 6,17 % 
-Následující rok (2018) ceny potravin vzrostli o 1,95 % a mzdy o 7,7 % -> 
+Následující rok (2018) ceny potravin vzrostly o 1,95 % a mzdy o 7,7 % -> 
 -> tady se opět zdá, že růst HDP by mohl souviset s růstem cen a mezd, minimálně pokud se jedná o rok ve kterém bylo HDP vyšší.
  	
 **Závěr:** z dat **nelze jednoznačně určit**, že pokud HDP vzroste výrazněji v jednom roce, projeví se to na cenách potravin či mzdách ve stejném nebo následujícím roce výraznějším růstem.
