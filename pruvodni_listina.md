@@ -20,6 +20,7 @@ Jelikož je vhodné tabulku velikostně optimalizovat, ponechala jsme pouze hodn
 -	NULL hodnoty u cen potravin a názvu odvětví byly odstraněny
 -	*Calculation code* obsahoval hodnoty 100 – fyzický a 200 přepočtený. Jelikož průměrná mzda se počítá na přepočtené plné úvazky, ponechala jsem pouze hodnotu 200
 -	*Value_type_code* obsahoval hodnoty 5958 (průměrná mzda) nebo 316 (průměrný počet zaměstnaných osob) – kód 316 jsem nikde v odpovědích nepotřebovala, z tabulky jsem ho proto odstranila
+  
 Spojením tabulek s cenami a průměrnými mzdami vznikl průnik údajů za *období od roku 2006 do 2018*. 
 
 **Tabulka 2**
