@@ -69,7 +69,6 @@ Následující rok (2008) ceny potravin vzrostly o 6,41 % a mzdy o 7,69 % -> zd�
 Následující rok (2016) ceny potravin klesly o 1,12 % a mzdy vzrostly o 3,64 % -> tady neplatí, že by vyšší růst HDP souvisel s růstem cen i mezd ve stejném i následujícím roce
 
 -	2017: HDP vzrostlo o 5,17 %, ceny potravin o 9,98 %, mzdy o 6,17 % 
-Následující rok (2018) ceny potravin vzrostly o 1,95 % a mzdy o 7,7 % -> 
--> tady se opět zdá, že růst HDP by mohl souviset s růstem cen a mezd, minimálně pokud se jedná o rok ve kterém bylo HDP vyšší.
+Následující rok (2018) ceny potravin vzrostly o 1,95 % a mzdy o 7,7 % -> tady se opět zdá, že růst HDP by mohl souviset s růstem cen a mezd, minimálně pokud se jedná o rok ve kterém bylo HDP vyšší.
  	
 **Závěr:** z dat **nelze jednoznačně určit**, že pokud HDP vzroste výrazněji v jednom roce, projeví se to na cenách potravin či mzdách ve stejném nebo následujícím roce výraznějším růstem.
