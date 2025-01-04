@@ -16,17 +16,17 @@ SELECT prim.rok
 	  	WHEN (sec.hdp/lag(sec.hdp) OVER (ORDER BY prim.rok)) *100-100 >0 THEN 'růst'
 	 	WHEN (sec.hdp/lag(sec.hdp) OVER (ORDER BY prim.rok)) *100-100 <0 THEN 'pokles'
 	 	WHEN (sec.hdp/lag(sec.hdp) OVER (ORDER BY prim.rok)) *100-100 =0 THEN 'stagnace'
-	    END AS hdp_vývoj
+	    END AS hdp_vyvoj
 	   ,CASE 
 	  	WHEN (avg(prim.cena)/lag(avg(prim.cena)) OVER (ORDER BY prim.rok) *100)-100 >0 THEN 'růst'
 	 	WHEN (avg(prim.cena)/lag(avg(prim.cena)) OVER (ORDER BY prim.rok) *100)-100 <0 THEN 'pokles'
 	 	WHEN (avg(prim.cena)/lag(avg(prim.cena)) OVER (ORDER BY prim.rok) *100)-100 =0 THEN 'stagnace'
-	    END AS cena_vývoj
+	    END AS cena_vyvoj
 	    ,CASE 
 	  	WHEN (avg(prim.prumerna_mzda)/lag(avg(prim.prumerna_mzda)) OVER (ORDER BY prim.rok) *100)-100 >0 THEN 'růst'
 	 	WHEN (avg(prim.prumerna_mzda)/lag(avg(prim.prumerna_mzda)) OVER (ORDER BY prim.rok) *100)-100 <0 THEN 'pokles'
 	 	WHEN (avg(prim.prumerna_mzda)/lag(avg(prim.prumerna_mzda)) OVER (ORDER BY prim.rok) *100)-100 =0 THEN 'stagnace'
-	    END AS mzdy_vývoj
+	    END AS mzdy_vyvoj
 FROM t_andrea_mottlova_project_sql_primary_final AS prim
 JOIN t_andrea_mottlova_project_sql_secondary_final AS sec 
 	ON prim.rok=sec.rok 
