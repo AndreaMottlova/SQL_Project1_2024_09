@@ -1,3 +1,6 @@
+-- Discord: Andrea Mottlová
+
+
 CREATE OR REPLACE TABLE t_andrea_mottlova_project_SQL_primary_final AS 
 SELECT 
 	A.price_year AS rok
