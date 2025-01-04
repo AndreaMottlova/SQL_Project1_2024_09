@@ -1,66 +1,74 @@
-# Projekt 1 – SQL – Datová akademie
+# Projekt 1 â€“ SQL â€“ DatovÃ¡ akademie
 ---
 
-### **Zadání projektu**
+### **ZadÃ¡nÃ­ projektu**
 
-Projekt se zamìøuje na dostupnost základních potravin široké veøejnosti, na základì srovnání cen potravin, prùmìrnıch mezd, pøípadnì i vlivu HDP. 
-Pro vıstup z projektu je potøeba vytvoøit **Tabulku 1** která obsahuje ceny potravin a prùmìrné mzdy v ÈR a **Tabulku 2**, která obsahuje HDP a další data o dalších evropskıch státech. 
-Z tabulek je následnì potøeba odpovìdìt na **5 zadanıch vızkumnıch otázek**. 
+Projekt se zamÄ›Å™uje na dostupnost zÃ¡kladnÃ­ch potravin Å¡irokÃ© veÅ™ejnosti, na zÃ¡kladÄ› srovnÃ¡nÃ­ cen potravin, prÅ¯mÄ›rnÃ½ch mezd, pÅ™Ã­padnÄ› i vlivu HDP. 
+Pro vÃ½stup z projektu je potÅ™eba vytvoÅ™it **Tabulku 1**, kterÃ¡ obsahuje ceny potravin a prÅ¯mÄ›rnÃ© mzdy v ÄŒR a **Tabulku 2**, kterÃ¡ obsahuje HDP a dalÅ¡Ã­ data o dalÅ¡Ã­ch evropskÃ½ch stÃ¡tech. 
+Z tabulek je nÃ¡slednÄ› potÅ™eba odpovÄ›dÄ›t na **5 zadanÃ½ch vÃ½zkumnÃ½ch otÃ¡zek**. 
 
-### **Vıstup projektu**
+### **VÃ½stup projektu**
 
 **Tabulka 1**
-Tabulka 1 obsahuje údaje o dostupnosti potravin na základì prùmìrnıch cen potravin a prùmìrnıch mezd za urèité období. 
-Pro analızu jsem pouila tabulky czechia_payroll (tabulka o prùmìrnıch mzdách v rùznıch odvìtvích) a czechia_price (tabulka o cenách potravin v regionech ÈR) a další k nim napojené tabulky a èíselníky. 
 
-*NULL hodnoty nebo odstranìné data:*
-Jeliko je vhodné tabulku velikostnì optimalizovat, ponechala jsme pouze hodnoty/sloupce, které budu potøebovat pro zodpovìzení zadanıch vızkumnıch otázek.  
--	*Regiony* – rozdìlení na regiony není pro vızkum dùleité, ponechala jsem proto pouze hodnotu region NULL, co pøedstavuje prùmìr za celou ÈR
--	NULL hodnoty u cen potravin a názvu odvìtví byly odstranìny
--	*Calculation code* obsahoval hodnoty 100 – fyzickı a 200 pøepoètenı. Jeliko prùmìrná mzda se poèítá na pøepoètené plné úvazky, ponechala jsem pouze hodnotu 200
--	*Value_type_code* obsahoval hodnoty 5958 (prùmìrná mzda) nebo 316 (prùmìrnı poèet zamìstnanıch osob) – kód 316 jsem nikde v odpovìdích nepotøebovala, z tabulky jsem ho proto odstranila
-Spojením tabulek s cenami a prùmìrnımi mzdami vznikl prùnik údajù za *období od roku 2006 do 2018*. 
+Tabulka 1 obsahuje Ãºdaje o dostupnosti potravin na zÃ¡kladÄ› prÅ¯mÄ›rnÃ½ch cen potravin a prÅ¯mÄ›rnÃ½ch mezd za urÄitÃ© obdobÃ­. 
+Pro analÃ½zu jsem pouÅ¾ila tabulky czechia_payroll (tabulka o prÅ¯mÄ›rnÃ½ch mzdÃ¡ch v rÅ¯znÃ½ch odvÄ›tvÃ­ch) a czechia_price (tabulka o cenÃ¡ch potravin v regionech ÄŒR) a dalÅ¡Ã­ k nim napojenÃ© tabulky a ÄÃ­selnÃ­ky. 
+
+*NULL hodnoty nebo odstranÄ›nÃ© data:*
+JelikoÅ¾ je vhodnÃ© tabulku velikostnÄ› optimalizovat, ponechala jsme pouze hodnoty/sloupce, kterÃ© budu potÅ™ebovat pro zodpovÄ›zenÃ­ zadanÃ½ch vÃ½zkumnÃ½ch otÃ¡zek.  
+-	*Regiony* â€“ rozdÄ›lenÃ­ na regiony nenÃ­ pro vÃ½zkum dÅ¯leÅ¾itÃ©, ponechala jsem proto pouze hodnotu region NULL, coÅ¾ pÅ™edstavuje prÅ¯mÄ›r za celou ÄŒR
+-	NULL hodnoty u cen potravin a nÃ¡zvu odvÄ›tvÃ­ byly odstranÄ›ny
+-	*Calculation code* obsahoval hodnoty 100 â€“ fyzickÃ½ a 200 pÅ™epoÄtenÃ½. JelikoÅ¾ prÅ¯mÄ›rnÃ¡ mzda se poÄÃ­tÃ¡ na pÅ™epoÄtenÃ© plnÃ© Ãºvazky, ponechala jsem pouze hodnotu 200
+-	*Value_type_code* obsahoval hodnoty 5958 (prÅ¯mÄ›rnÃ¡ mzda) nebo 316 (prÅ¯mÄ›rnÃ½ poÄet zamÄ›stnanÃ½ch osob) â€“ kÃ³d 316 jsem nikde v odpovÄ›dÃ­ch nepotÅ™ebovala, z tabulky jsem ho proto odstranila
+SpojenÃ­m tabulek s cenami a prÅ¯mÄ›rnÃ½mi mzdami vznikl prÅ¯nik ÃºdajÅ¯ za *obdobÃ­ od roku 2006 do 2018*. 
 
 **Tabulka 2**
-Dodateèná data (HDP, GINI, populace) o evropskıch státech za období 2006 a 2018.
 
-**Otázka 1**
-***Rostou v prùbìhu let mzdy ve všech odvìtvích, nebo v nìkterıch klesají?***
+DodateÄnÃ¡ data (HDP, GINI, populace) o evropskÃ½ch stÃ¡tech za obdobÃ­ 2006 aÅ¾ 2018.
 
-Pokud vezmeme v úvahu celé sledované období (porovnání roku 2006 a 2018), mzdy ve všech odvìtvích od roku 2006 do 2018 stoupaly, minimální celkovı nárust byl o 37,1 % v odvìtví Penìnictví a pojišovnictví, naopak nejvìtší nárust od roku 2006 do 2018 byl v odvìtví Zdravotní a sociální péèe a to o 77,8 %.
-V datech byl ale zaznamenán pokles mezd v nìkterıch rocích a odvìtvích. **Nejvìtší pokles, o 8,8 % byl v roce 2013 v odvìtví Penìnictví a pojišovnictví**, kdy prùmìrná mzda klesla z 50 801 Kè v roce 2012 na 46 317 Kè v roce 2013. 
+**OtÃ¡zka 1**
 
-**Otázka 2**
-***Kolik je moné si koupit litrù mléka a kilogramù chleba za první a poslední srovnatelné období v dostupnıch datech cen a mezd?***
+***Rostou v prÅ¯bÄ›hu let mzdy ve vÅ¡ech odvÄ›tvÃ­ch, nebo v nÄ›kterÃ½ch klesajÃ­?***
 
-Ve sledovaném období byla prùmìrná mzda na zaèátku období, tedy v roku 2006, ve vıši 21165 Kè, na konci období, tedy v roce 2018, vystoupala prùmìrná mzda na 33091 Kè. 
-Mezi roky 2006 a 2018 došlo k nárustu prùmìrné mzdy, ale také ke zvıšení cen potravin. V roce 2018 je moné za prùmìrnou mzdu koupit o nìco víc chleba (1365 kg) ne v roce 2006 (1312 kg). U mlíka byl rozdíl vıraznìjší, kdy v roce 2006 bylo moné koupit z prùmìrné mzdy 1465 l, kdeto v roce 2018 a 1669 l mléka. 
-Z toho vyplıvá, e **za prùmìrnou mzdu je v roce 2018 moné koupit vìtší mnoství základních potravin**, co mùe odráet rùst reálné kupní síly. 
+Pokud vezmeme v Ãºvahu celÃ© sledovanÃ© obdobÃ­ (porovnÃ¡nÃ­ roku 2006 a 2018), mzdy ve vÅ¡ech odvÄ›tvÃ­ch od roku 2006 do 2018 stoupaly, minimÃ¡lnÃ­ celkovÃ½ nÃ¡rust byl o 37,1 % v odvÄ›tvÃ­ PenÄ›Å¾nictvÃ­ a pojiÅ¡Å¥ovnictvÃ­, naopak nejvÄ›tÅ¡Ã­ nÃ¡rust od roku 2006 do 2018 byl v odvÄ›tvÃ­ ZdravotnÃ­ a sociÃ¡lnÃ­ pÃ©Äe a to o 77,8 %.
+V datech byl ale zaznamenÃ¡n pokles mezd v nÄ›kterÃ½ch rocÃ­ch a odvÄ›tvÃ­ch. **NejvÄ›tÅ¡Ã­ pokles, o 8,8 % byl v roce 2013 v odvÄ›tvÃ­ PenÄ›Å¾nictvÃ­ a pojiÅ¡Å¥ovnictvÃ­**, kdy prÅ¯mÄ›rnÃ¡ mzda klesla z 50 801 KÄ v roce 2012 na 46 317 KÄ v roce 2013. 
 
-**Otázka 3**
-***Která kategorie potravin zdrauje nejpomaleji (je u ní nejniší procentuální meziroèní nárùst)?***
+**OtÃ¡zka 2**
 
-Na základì dat lze identifikovat, e **potravinou s nejpomalejším meziroèním nárustem cen je Cukr krystalovı**, kterı vykazuje nejniší prùmìrnı meziroèní nárust procent a to o 1,92%, co znamená, e jeho cena se dokonce sniovala. Celkovı pokles ceny èiní 23,02%. 
-Kromì cukru zlevòovali ještì Rajská jablka èervená kulatá, a to prùmìrnì meziroènì o 0,74%, celkovı pokles ceny byl o 8,89%. Tohle jsou dvì kategorie, která zdraovala nejpomaleji, respektive zlevòovala, co je v porovnání s ostatními kategoriemi potravin vıjimeèné. 
+***Kolik je moÅ¾nÃ© si koupit litrÅ¯ mlÃ©ka a kilogramÅ¯ chleba za prvnÃ­ a poslednÃ­ srovnatelnÃ© obdobÃ­ v dostupnÃ½ch datech cen a mezd?***
 
-**Otázka 4**
-***Existuje rok, ve kterém byl meziroèní nárùst cen potravin vıraznì vyšší ne rùst mezd (vìtší ne 10 %)?***
+Ve sledovanÃ©m obdobÃ­ byla prÅ¯mÄ›rnÃ¡ mzda na zaÄÃ¡tku obdobÃ­, tedy v roku 2006, ve vÃ½Å¡i 21165 KÄ, na konci obdobÃ­, tedy v roce 2018, vystoupala prÅ¯mÄ›rnÃ¡ mzda na 33091 KÄ. 
+Mezi roky 2006 a 2018 doÅ¡lo k nÃ¡rustu prÅ¯mÄ›rnÃ© mzdy, ale takÃ© ke zvÃ½Å¡enÃ­ cen potravin. V roce 2018 je moÅ¾nÃ© za prÅ¯mÄ›rnou mzdu koupit o nÄ›co vÃ­c chleba (1365 kg) neÅ¾ v roce 2006 (1312 kg). U mlÃ©ka byl rozdÃ­l vÃ½raznÄ›jÅ¡Ã­, kdy v roce 2006 bylo moÅ¾nÃ© koupit z prÅ¯mÄ›rnÃ© mzdy 1465 l, kdeÅ¾to v roce 2018 aÅ¾ 1669 l mlÃ©ka. 
+Z toho vyplÃ½vÃ¡, Å¾e **za prÅ¯mÄ›rnou mzdu je v roce 2018 moÅ¾nÃ© koupit vÄ›tÅ¡Ã­ mnoÅ¾stvÃ­ zÃ¡kladnÃ­ch potravin**, coÅ¾ mÅ¯Å¾e odrÃ¡Å¾et rÅ¯st reÃ¡lnÃ© kupnÃ­ sÃ­ly. 
 
-Meziroèní nárust cen potravin i meziroèní nárust mezd jsem vyhodnotila procentuálním nárustem oproti pøedchozímu roku. Rozdílem mezi tìmito vypoètenımi hodnotami jsem porovnala vıvoj cen vs mezd. Nejhorší situace nastává, kdy rùst cen potravin je vysokı, ale rùst mezd je nízkı. 
-Z dat vyplıvá, e **ani v jednom ze sledovanıch rokù nebyl meziroèní nárust cen potravin vyšší ne 10 % oproti rùstu mezd**. 
-Nejhorší situace byla v roce 2013, kdy prùmìrné ceny potravin vzrostli o 5,55 % a prùmìrné mzdy klesly o 1,56 % co znamená, e rùst potravin byl vyšší o 7,11 % oproti rùstu mezd. 
+**OtÃ¡zka 3**
 
-**Otázka 5**
-***Má vıška HDP vliv na zmìny ve mzdách a cenách potravin? Neboli, pokud HDP vzroste vıraznìji v jednom roce, projeví se to na cenách potravin èi mzdách ve stejném nebo následujícím roce vıraznìjším rùstem?***
+***KterÃ¡ kategorie potravin zdraÅ¾uje nejpomaleji (je u nÃ­ nejniÅ¾Å¡Ã­ procentuÃ¡lnÃ­ meziroÄnÃ­ nÃ¡rÅ¯st)?***
 
-Z dat je patrné, e nejvıraznìjší nárust HDP (nad 5%) byl v rocích 2007, 2015 a 2017. 
+Na zÃ¡kladÄ› dat lze identifikovat, Å¾e **potravinou s nejpomalejÅ¡Ã­m meziroÄnÃ­m nÃ¡rustem cen je Cukr krystalovÃ½**, kterÃ½ vykazuje nejniÅ¾Å¡Ã­ prÅ¯mÄ›rnÃ½ meziroÄnÃ­ nÃ¡rust procent a to o 1,92%, coÅ¾ znamenÃ¡, Å¾e jeho cena se dokonce sniÅ¾ovala. CelkovÃ½ pokles ceny ÄinÃ­ 23,02%. 
+KromÄ› cukru zlevÅˆovali jeÅ¡tÄ› RajskÃ¡ jablka ÄervenÃ¡ kulatÃ¡, a to prÅ¯mÄ›rnÄ› meziroÄnÄ› o 0,74%, celkovÃ½ pokles ceny byl o 8,89%. Tohle jsou dvÄ› kategorie, kterÃ¡ zdraÅ¾ovala nejpomaleji, respektive zlevÅˆovala, coÅ¾ je v porovnÃ¡nÃ­ s ostatnÃ­mi kategoriemi potravin vÃ½jimeÄnÃ©. 
+
+**OtÃ¡zka 4**
+
+***Existuje rok, ve kterÃ©m byl meziroÄnÃ­ nÃ¡rÅ¯st cen potravin vÃ½raznÄ› vyÅ¡Å¡Ã­ neÅ¾ rÅ¯st mezd (vÄ›tÅ¡Ã­ neÅ¾ 10 %)?***
+
+MeziroÄnÃ­ nÃ¡rust cen potravin i meziroÄnÃ­ nÃ¡rust mezd jsem vyhodnotila procentuÃ¡lnÃ­m nÃ¡rustem oproti pÅ™edchozÃ­mu roku. RozdÃ­lem mezi tÄ›mito vypoÄtenÃ½mi hodnotami jsem porovnala vÃ½voj cen vs mezd. NejhorÅ¡Ã­ situace nastÃ¡vÃ¡, kdyÅ¾ rÅ¯st cen potravin je vysokÃ½, ale rÅ¯st mezd je nÃ­zkÃ½. 
+Z dat vyplÃ½vÃ¡, Å¾e **ani v jednom ze sledovanÃ½ch rokÅ¯ nebyl meziroÄnÃ­ nÃ¡rust cen potravin vyÅ¡Å¡Ã­ neÅ¾ 10 % oproti rÅ¯stu mezd**. 
+NejhorÅ¡Ã­ situace byla v roce 2013, kdy prÅ¯mÄ›rnÃ© ceny potravin vzrostli o 5,55 % a prÅ¯mÄ›rnÃ© mzdy klesly o 1,56 % coÅ¾ znamenÃ¡, Å¾e rÅ¯st cen potravin byl vyÅ¡Å¡Ã­ o 7,11 % oproti rÅ¯stu mezd. 
+
+**OtÃ¡zka 5**
+
+***MÃ¡ vÃ½Å¡ka HDP vliv na zmÄ›ny ve mzdÃ¡ch a cenÃ¡ch potravin? Neboli, pokud HDP vzroste vÃ½raznÄ›ji v jednom roce, projevÃ­ se to na cenÃ¡ch potravin Äi mzdÃ¡ch ve stejnÃ©m nebo nÃ¡sledujÃ­cÃ­m roce vÃ½raznÄ›jÅ¡Ã­m rÅ¯stem?***
+
+Z dat je patrnÃ©, Å¾e nejvÃ½raznÄ›jÅ¡Ã­ nÃ¡rust HDP (nad 5%) byl v rocÃ­ch 2007, 2015 a 2017. 
 -	2007: HDP vzrostlo o 5,57 %, ceny potravin o 6,35 %, mzdy o 6,88 % 
-Následující rok (2008) ceny potravin vzrostli o 6,41 % a mzdy o 7,69 % -> zdá se, e vyšší rùst HDP mùe souviset s rùstem cen i mezd ve stejném i následujícím roce
+NÃ¡sledujÃ­cÃ­ rok (2008) ceny potravin vzrostly o 6,41 % a mzdy o 7,69 % -> zdÃ¡ se, Å¾e vyÅ¡Å¡Ã­ rÅ¯st HDP mÅ¯Å¾e souviset s rÅ¯stem cen i mezd ve stejnÃ©m i nÃ¡sledujÃ­cÃ­m roce
 
 -	2015: HDP vzrostlo o 5,39 %, ceny potravin klesly o 0,56 %, a mzdy vzrostly o 2,6 % 
-Následující rok (2016) ceny potravin klesly o 1,12 % a mzdy vzrostly o 3,64 % -> tady neplatí, e by vyšší rùst HDP souvisel s rùstem cen i mezd ve stejném i následujícím roce
+NÃ¡sledujÃ­cÃ­ rok (2016) ceny potravin klesly o 1,12 % a mzdy vzrostly o 3,64 % -> tady neplatÃ­, Å¾e by vyÅ¡Å¡Ã­ rÅ¯st HDP souvisel s rÅ¯stem cen i mezd ve stejnÃ©m i nÃ¡sledujÃ­cÃ­m roce
 
 -	2017: HDP vzrostlo o 5,17 %, ceny potravin o 9,98 %, mzdy o 6,17 % 
-Následující rok (2018) ceny potravin vzrostli o 1,95 % a mzdy o 7,7 % -> 
--> tady se opìt zdá, e rùst HDP by mohl souviset s rùstem cen a mezd, minimálnì pokud se jedná o rok ve kterém bylo HDP vyšší. 
-**Závìr:** z dat **nelze jednoznaènì urèit**, e pokud HDP vzroste vıraznìji v jednom roce, projeví se to na cenách potravin èi mzdách ve stejném nebo následujícím roce vıraznìjším rùstem.
+NÃ¡sledujÃ­cÃ­ rok (2018) ceny potravin vzrostly o 1,95 % a mzdy o 7,7 % -> 
+-> tady se opÄ›t zdÃ¡, Å¾e rÅ¯st HDP by mohl souviset s rÅ¯stem cen a mezd, minimÃ¡lnÄ› pokud se jednÃ¡ o rok ve kterÃ©m bylo HDP vyÅ¡Å¡Ã­.
+ 	
+**ZÃ¡vÄ›r:** z dat **nelze jednoznaÄnÄ› urÄit**, Å¾e pokud HDP vzroste vÃ½raznÄ›ji v jednom roce, projevÃ­ se to na cenÃ¡ch potravin Äi mzdÃ¡ch ve stejnÃ©m nebo nÃ¡sledujÃ­cÃ­m roce vÃ½raznÄ›jÅ¡Ã­m rÅ¯stem.
