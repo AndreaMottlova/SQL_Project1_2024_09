@@ -21,6 +21,12 @@ ORDER BY odvetvi ,rok
 )
 
 
+-- select view
+SELECT * 
+FROM v_andrea_mottlova_otazka1 AS vamo 
+
+
+
 -- pokles mezd v určitých odvětvích v konkrétních letech
 SELECT *
 FROM v_andrea_mottlova_otazka1 AS vamo 
