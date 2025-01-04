@@ -20,6 +20,7 @@ Jelikož je vhodné tabulku velikostně optimalizovat, ponechala jsme pouze hodn
 -	NULL hodnoty u cen potravin a názvu odvětví byly odstraněny
 -	*Calculation code* obsahoval hodnoty 100 – fyzický a 200 přepočtený. Jelikož průměrná mzda se počítá na přepočtené plné úvazky, ponechala jsem pouze hodnotu 200
 -	*Value_type_code* obsahoval hodnoty 5958 (průměrná mzda) nebo 316 (průměrný počet zaměstnaných osob) – kód 316 jsem nikde v odpovědích nepotřebovala, z tabulky jsem ho proto odstranila
+  
 Spojením tabulek s cenami a průměrnými mzdami vznikl průnik údajů za *období od roku 2006 do 2018*. 
 
 **Tabulka 2**
@@ -68,7 +69,6 @@ Následující rok (2008) ceny potravin vzrostly o 6,41 % a mzdy o 7,69 % -> zd�
 Následující rok (2016) ceny potravin klesly o 1,12 % a mzdy vzrostly o 3,64 % -> tady neplatí, že by vyšší růst HDP souvisel s růstem cen i mezd ve stejném i následujícím roce
 
 -	2017: HDP vzrostlo o 5,17 %, ceny potravin o 9,98 %, mzdy o 6,17 % 
-Následující rok (2018) ceny potravin vzrostly o 1,95 % a mzdy o 7,7 % -> 
--> tady se opět zdá, že růst HDP by mohl souviset s růstem cen a mezd, minimálně pokud se jedná o rok ve kterém bylo HDP vyšší.
+Následující rok (2018) ceny potravin vzrostly o 1,95 % a mzdy o 7,7 % -> tady se opět zdá, že růst HDP by mohl souviset s růstem cen a mezd, minimálně pokud se jedná o rok ve kterém bylo HDP vyšší.
  	
 **Závěr:** z dat **nelze jednoznačně určit**, že pokud HDP vzroste výrazněji v jednom roce, projeví se to na cenách potravin či mzdách ve stejném nebo následujícím roce výraznějším růstem.
